@@ -1,39 +1,12 @@
 import Link from "next/link";
+import { readData } from "@/lib/data";
 
-const products = [
-  {
-    name: "Bedsheets",
-    tag: "Soft and Breathable",
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80",
-    href: "/products/bedsheets",
-  },
-  {
-    name: "Towels",
-    tag: "Ultra-Absorbent",
-    image: "https://images.unsplash.com/photo-1616627988170-4a5db5845357?w=500&q=80",
-    href: "/products/towels",
-  },
-  {
-    name: "Pillow Covers",
-    tag: "Plain and Stripe",
-    image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500&q=80",
-    href: "/products/pillow-covers",
-  },
-  {
-    name: "Bath Mats",
-    tag: "Durable and Soft",
-    image: "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=500&q=80",
-    href: "/products/bath-mats",
-  },
-  {
-    name: "Duvets",
-    tag: "Cozy and Elegant",
-    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80",
-    href: "/products/duvets",
-  },
-];
+type Product = { id: string; name: string; tag: string; image: string; href: string };
+
+export const dynamic = "force-dynamic";
 
 export default function ProductsPage() {
+  const products = readData<Product[]>("products.json");
   return (
     <div>
       <h1 className="text-4xl md:text-5xl font-bold font-[var(--font-heading)] text-primary mb-3">

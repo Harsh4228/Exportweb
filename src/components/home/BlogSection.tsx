@@ -1,33 +1,17 @@
 "use client";
+import { useEffect, useState } from "react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import Link from "next/link";
 
-const blogs = [
-  {
-    title: "Seasonal Trends in Home Textiles: What Buyers Demand in 2025",
-    excerpt: "Discover the latest trends shaping the home textile industry and what international buyers are looking for.",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80",
-    date: "Mar 15, 2025",
-    slug: "seasonal-trends-2025",
-  },
-  {
-    title: "Packaging Solutions for Export Textiles: What Works Best",
-    excerpt: "Learn about the most effective packaging methods to protect your textiles during international shipping.",
-    image: "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=500&q=80",
-    date: "Mar 10, 2025",
-    slug: "packaging-solutions",
-  },
-  {
-    title: "Eco-Friendly Options: Organic Cotton & Sustainable Packaging",
-    excerpt: "How sustainable practices and organic cotton are revolutionizing the textile export industry.",
-    image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=500&q=80",
-    date: "Mar 5, 2025",
-    slug: "eco-friendly-options",
-  },
-];
+type Blog = { id: string; slug: string; title: string; excerpt: string; date: string; image: string; category: string };
 
 export default function BlogSection() {
   const ref = useScrollReveal();
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    fetch("/api/blogs").then((r) => r.json()).then((data: Blog[]) => setBlogs(data.slice(0, 3)));
+  }, []);
 
   return (
     <section ref={ref} className="section-padding bg-cream">

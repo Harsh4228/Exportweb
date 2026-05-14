@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "OEKO-TEX Standard 100",
+    "desc": "Certified free from harmful substances. Every component of our textiles has been tested for safety."
+  },
+  {
+    "id": "2",
+    "title": "ISO 9001:2015",
+    "desc": "Quality management system certification ensuring consistent quality in manufacturing and delivery."
+  },
+  {
+    "id": "3",
+    "title": "GOTS (Global Organic Textile Standard)",
+    "desc": "Our organic cotton products meet global standards for organic fibers, including ecological and social criteria."
+  },
+  {
+    "id": "4",
+    "title": "BCI (Better Cotton Initiative)",
+    "desc": "We source cotton through sustainable farming practices that reduce environmental impact."
+  },
+  {
+    "id": "5",
+    "title": "SEDEX / SMETA Audit",
+    "desc": "Ethical trade audit ensuring labor rights, health & safety, environment, and business ethics compliance."
+  },
+  {
+    "id": "6",
+    "title": "WRAP Certification",
+    "desc": "Worldwide Responsible Accredited Production certification for lawful, humane, and ethical manufacturing."
+  }
+]

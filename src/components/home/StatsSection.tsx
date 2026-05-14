@@ -1,12 +1,8 @@
 "use client";
+import { useEffect, useState } from "react";
 import useCountUp from "@/hooks/useCountUp";
 
-const stats = [
-  { value: 1000, suffix: "+", label: "Happy Buyers" },
-  { value: 50, suffix: "+", label: "Countries Served" },
-  { value: 10, suffix: "+", label: "Years Experience" },
-  { value: 5000, suffix: "+", label: "Orders Delivered" },
-];
+type Stat = { id: string; value: number; suffix: string; label: string };
 
 function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const { count, ref } = useCountUp(value);
@@ -23,6 +19,11 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
 }
 
 export default function StatsSection() {
+  const [stats, setStats] = useState<Stat[]>([]);
+
+  useEffect(() => {
+    fetch("/api/stats").then((r) => r.json()).then(setStats);
+  }, []);
   return (
     <section className="py-20 bg-cream border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

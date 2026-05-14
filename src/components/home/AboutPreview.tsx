@@ -13,7 +13,7 @@ export default function AboutPreview() {
           <div className="scroll-reveal relative">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80"
+                src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?w=600&q=80"
                 alt="Cotton textiles manufacturing"
                 className="w-full h-[450px] object-cover"
               />

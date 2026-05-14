@@ -8,7 +8,7 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto px-4 py-8">
           <div className="relative rounded-2xl overflow-hidden h-[300px]">
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80"
+              src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?w=1200&q=80"
               alt="Cotton plant and textiles"
               className="w-full h-full object-cover"
             />

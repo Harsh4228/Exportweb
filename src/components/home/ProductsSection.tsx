@@ -1,36 +1,17 @@
 "use client";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-const products = [
-  {
-    name: "Bedsheets",
-    tag: "SOFT AND BREATHABLE",
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80",
-    href: "/products/bedsheets",
-  },
-  {
-    name: "Towels",
-    tag: "ULTRA-ABSORBENT",
-    image: "https://images.unsplash.com/photo-1616627988170-4a5db5845357?w=500&q=80",
-    href: "/products/towels",
-  },
-  {
-    name: "Pillow Covers",
-    tag: "PLAIN AND STRIPE",
-    image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500&q=80",
-    href: "/products/pillow-covers",
-  },
-  {
-    name: "Bath Mats",
-    tag: "DURABLE AND SOFT",
-    image: "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=500&q=80",
-    href: "/products/bath-mats",
-  },
-];
+type Product = { id: string; name: string; tag: string; image: string; href: string };
 
 export default function ProductsSection() {
   const ref = useScrollReveal();
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetch("/api/products").then((r) => r.json()).then((data) => setProducts(data.slice(0, 4)));
+  }, []);
 
   return (
     <section ref={ref} className="section-padding bg-white">

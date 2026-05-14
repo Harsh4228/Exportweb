@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "name": "Bedsheets",
+    "tag": "Premium 100% Cotton",
+    "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80",
+    "href": "/products/bedsheets"
+  },
+  {
+    "id": "2",
+    "name": "Towels",
+    "tag": "Bath, Hand & Face",
+    "image": "https://images.unsplash.com/photo-1600369672770-985fd30004eb?w=500&q=80",
+    "href": "/products/towels"
+  },
+  {
+    "id": "3",
+    "name": "Pillow Covers",
+    "tag": "Plain & Satin Stripe",
+    "image": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500&q=80",
+    "href": "/products/pillow-covers"
+  },
+  {
+    "id": "4",
+    "name": "Bath Mats",
+    "tag": "Anti-Slip Cotton",
+    "image": "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=500&q=80",
+    "href": "/products/bath-mats"
+  },
+  {
+    "id": "5",
+    "name": "Duvets",
+    "tag": "Covers & Comforters",
+    "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80",
+    "href": "/products/duvets"
+  }
+]

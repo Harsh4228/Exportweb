@@ -24,7 +24,7 @@ export default function TowelsPage() {
 
       <div className="mt-8 rounded-2xl overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1616627988170-4a5db5845357?w=800&q=80"
+          src="https://images.unsplash.com/photo-1600369672770-985fd30004eb?w=800&q=80"
           alt="Cotton Towels"
           className="w-full h-[400px] object-cover"
         />

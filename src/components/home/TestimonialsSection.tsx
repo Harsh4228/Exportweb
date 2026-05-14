@@ -1,31 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
-const testimonials = [
-  {
-    name: "James Thompson",
-    role: "Buyer, USA",
-    text: "Exceptional quality cotton textiles! The bedsheets are incredibly soft and durable. Lokasya Ventures has been our go-to supplier for over 2 years now.",
-    rating: 5,
-  },
-  {
-    name: "Maria Schmidt",
-    role: "Wholesaler, Germany",
-    text: "Reliable exports and competitive pricing. Their team is responsive and ensures every order meets our European quality standards.",
-    rating: 5,
-  },
-  {
-    name: "Ahmed Hassan",
-    role: "Retailer, UAE",
-    text: "Outstanding service from start to finish. The customization options allowed us to create exactly what our customers wanted. Highly recommended!",
-    rating: 5,
-  },
-];
+type Testimonial = { id: string; name: string; role: string; text: string; rating: number };
 
 export default function TestimonialsSection() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [active, setActive] = useState(0);
   const ref = useScrollReveal();
+
+  useEffect(() => {
+    fetch("/api/testimonials").then((r) => r.json()).then(setTestimonials);
+  }, []);
+
+  if (testimonials.length === 0) return null;
 
   return (
     <section ref={ref} className="section-padding bg-white">

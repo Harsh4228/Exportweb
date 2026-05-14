@@ -1,88 +1,17 @@
 import Link from "next/link";
+import { readData } from "@/lib/data";
 
-const blogData: Record<string, { title: string; date: string; category: string; image: string; content: string[] }> = {
-  "benefits-of-egyptian-cotton": {
-    title: "Benefits of Egyptian Cotton for Home Textiles",
-    date: "January 15, 2025",
-    category: "Cotton Guide",
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80",
-    content: [
-      "Egyptian cotton is renowned worldwide as the finest cotton available. Its extra-long staple fibers create incredibly soft, durable, and luxurious textiles that improve with every wash.",
-      "The unique growing conditions along the Nile River produce cotton fibers that are longer and thinner than regular cotton. These longer fibers can be spun into finer yarns, resulting in a higher thread count and a smoother, more lustrous fabric.",
-      "For bedsheets, Egyptian cotton offers unmatched breathability and moisture-wicking properties, keeping you cool in summer and warm in winter. The fabric becomes softer with each wash, making it a long-term investment in comfort.",
-      "In towels, Egyptian cotton provides superior absorbency while maintaining a lightweight feel. Hotels and spas worldwide prefer Egyptian cotton towels for their guests because of the luxurious hand feel and durability.",
-      "When sourcing Egyptian cotton products, look for certifications that verify authenticity. At Lokasya Ventures, we ensure all our Egyptian cotton products meet the highest quality standards and come with proper certification.",
-    ],
-  },
-  "how-to-choose-bedsheets": {
-    title: "How to Choose the Perfect Bedsheets: A Complete Guide",
-    date: "January 8, 2025",
-    category: "Buying Guide",
-    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=80",
-    content: [
-      "Choosing the right bedsheets involves understanding several key factors: thread count, weave type, fiber quality, and finish. Let's break down each factor to help you make the best choice.",
-      "Thread count refers to the number of threads per square inch. While a higher thread count generally indicates a finer fabric, anything between 200-800 TC offers excellent quality. Beyond 800 TC, the differences become minimal.",
-      "The weave type significantly affects how sheets feel. Percale weave (one-over-one-under) creates a crisp, cool sheet ideal for warm climates. Sateen weave (four-over-one-under) produces a silky, lustrous finish with more drape.",
-      "Fiber quality matters more than thread count alone. Long-staple cotton fibers create smoother, more durable sheets. Look for Egyptian, Supima, or Pima cotton for the best quality.",
-      "Consider your climate and personal preferences. Percale sheets are breathable and cool, perfect for hot sleepers. Sateen sheets have a slight warmth to them and a luxurious sheen that many prefer.",
-    ],
-  },
-  "sustainable-textile-manufacturing": {
-    title: "Sustainable Practices in Textile Manufacturing",
-    date: "December 28, 2024",
-    category: "Sustainability",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80",
-    content: [
-      "The textile industry is undergoing a transformation as manufacturers adopt sustainable practices to reduce environmental impact. From water conservation to organic farming, the industry is making significant strides.",
-      "Water usage is one of the biggest environmental concerns in textile manufacturing. Modern facilities now use closed-loop water systems that recycle up to 95% of water used in dyeing and finishing processes.",
-      "Organic cotton farming eliminates the use of synthetic pesticides and fertilizers, protecting both the environment and workers' health. Certifications like GOTS ensure organic integrity throughout the supply chain.",
-      "Energy-efficient manufacturing processes, including solar-powered facilities and heat recovery systems, are reducing the carbon footprint of textile production significantly.",
-      "At Lokasya Ventures, sustainability isn't just a goal—it's a practice. We work with certified organic cotton suppliers and maintain strict environmental standards throughout our manufacturing process.",
-    ],
-  },
-  "towel-gsm-guide": {
-    title: "Understanding Towel GSM: What It Means for Quality",
-    date: "December 20, 2024",
-    category: "Cotton Guide",
-    image: "https://images.unsplash.com/photo-1616627988170-4a5db5845357?w=1200&q=80",
-    content: [
-      "GSM stands for Grams per Square Meter and is the standard measurement for towel weight and density. Understanding GSM helps you choose the right towel for every purpose.",
-      "Lightweight towels (300-400 GSM) are ideal for gym use, travel, and beach outings. They dry quickly and are easy to carry, making them practical for everyday use.",
-      "Medium-weight towels (400-600 GSM) offer the perfect balance of absorbency and quick-drying capability. These are the most popular choice for household bathrooms.",
-      "Heavyweight towels (600-900 GSM) provide a luxury spa-like experience. These thick, plush towels are highly absorbent and feel incredibly soft against the skin. Hotels and spas prefer this range.",
-      "When selecting towels for bulk orders, consider the end use. Hospitality clients typically prefer 500-700 GSM for the perfect combination of luxury feel and practical laundry considerations.",
-    ],
-  },
-  "hotel-textile-procurement": {
-    title: "Hotel Textile Procurement: Best Practices for Hospitality",
-    date: "December 12, 2024",
-    category: "Industry",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
-    content: [
-      "Procuring textiles for hotels requires careful consideration of quality, durability, guest comfort, and cost-effectiveness. Here are the best practices for hospitality textile sourcing.",
-      "Durability should be a top priority. Hotel linens undergo frequent washing at high temperatures. Look for fabrics with strong fiber structure, reinforced hems, and colorfast dyes that withstand industrial laundering.",
-      "Thread count between 250-400 TC is ideal for hotel bedsheets. This range provides excellent comfort while maintaining durability through hundreds of wash cycles.",
-      "For towels, 500-600 GSM strikes the perfect balance between luxury feel and practical considerations like drying time and laundry costs.",
-      "Working with a reliable exporter who understands hospitality requirements is essential. Look for suppliers with OEKO-TEX and ISO certifications, consistent quality, and the ability to handle large recurring orders.",
-    ],
-  },
-  "cotton-vs-synthetic": {
-    title: "Cotton vs Synthetic: Why Natural Fibers Win",
-    date: "December 5, 2024",
-    category: "Cotton Guide",
-    image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=1200&q=80",
-    content: [
-      "The debate between cotton and synthetic fibers has been ongoing, but for home textiles, natural cotton consistently proves to be the superior choice across multiple criteria.",
-      "Breathability is where cotton truly shines. Cotton fibers naturally allow air circulation, keeping you cool in summer and warm in winter. Synthetic fabrics trap heat and moisture, leading to discomfort during sleep.",
-      "Cotton is hypoallergenic and gentle on skin, making it ideal for people with sensitive skin or allergies. Synthetic fibers can cause irritation and trap bacteria more easily.",
-      "From a sustainability perspective, cotton is biodegradable and renewable. While organic cotton farming does use water, it doesn't rely on petroleum-based raw materials like polyester does.",
-      "Cotton textiles maintain their quality and comfort over many years of use and washing. While synthetics may initially feel smooth, they tend to pill, lose shape, and become less comfortable over time.",
-    ],
-  },
+type Blog = {
+  id: string; slug: string; title: string; excerpt: string;
+  date: string; image: string; category: string; content: string[];
 };
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogData[params.slug];
+export const dynamic = "force-dynamic";
+
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const blogs = readData<Blog[]>("blogs.json");
+  const post = blogs.find((b) => b.slug === slug);
 
   if (!post) {
     return (

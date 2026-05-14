@@ -1,57 +1,13 @@
 import Link from "next/link";
+import { readData } from "@/lib/data";
 
-const blogs = [
-  {
-    slug: "benefits-of-egyptian-cotton",
-    title: "Benefits of Egyptian Cotton for Home Textiles",
-    excerpt: "Discover why Egyptian cotton is considered the gold standard for luxury bedding and towels worldwide.",
-    date: "January 15, 2025",
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
-    category: "Cotton Guide",
-  },
-  {
-    slug: "how-to-choose-bedsheets",
-    title: "How to Choose the Perfect Bedsheets: A Complete Guide",
-    excerpt: "Thread count, weave type, and fabric quality — learn what really matters when selecting bedsheets.",
-    date: "January 8, 2025",
-    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80",
-    category: "Buying Guide",
-  },
-  {
-    slug: "sustainable-textile-manufacturing",
-    title: "Sustainable Practices in Textile Manufacturing",
-    excerpt: "How modern textile manufacturers are reducing environmental impact while maintaining quality standards.",
-    date: "December 28, 2024",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80",
-    category: "Sustainability",
-  },
-  {
-    slug: "towel-gsm-guide",
-    title: "Understanding Towel GSM: What It Means for Quality",
-    excerpt: "A comprehensive guide to GSM ratings and how they affect towel absorbency, durability, and feel.",
-    date: "December 20, 2024",
-    image: "https://images.unsplash.com/photo-1616627988170-4a5db5845357?w=600&q=80",
-    category: "Cotton Guide",
-  },
-  {
-    slug: "hotel-textile-procurement",
-    title: "Hotel Textile Procurement: Best Practices for Hospitality",
-    excerpt: "Key considerations when sourcing cotton textiles for hotels, including quality standards and bulk ordering.",
-    date: "December 12, 2024",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
-    category: "Industry",
-  },
-  {
-    slug: "cotton-vs-synthetic",
-    title: "Cotton vs Synthetic: Why Natural Fibers Win",
-    excerpt: "Comparing cotton with synthetic alternatives across comfort, durability, sustainability, and value.",
-    date: "December 5, 2024",
-    image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80",
-    category: "Cotton Guide",
-  },
-];
+type Blog = { id: string; slug: string; title: string; excerpt: string; date: string; image: string; category: string; content: string[] };
+
+export const dynamic = "force-dynamic";
 
 export default function BlogPage() {
+  const blogs = readData<Blog[]>("blogs.json");
+
   return (
     <div className="pt-20">
       {/* Hero */}
