@@ -1,6 +1,28 @@
 "use client";
+import { useState, FormEvent } from "react";
 
 export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const recipient = process.env.NEXT_PUBLIC_EMAIL || "";
+    const subject = `Meridian Global Exports Inquiry from ${name || "Website Visitor"}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    if (recipient) {
+      window.location.href = mailtoLink;
+      setSubmitted(true);
+    } else {
+      alert("Email address is not configured. Please contact us through WhatsApp or phone.");
+    }
+  };
+
   return (
     <div className="pt-20">
       {/* Hero Banner */}
@@ -170,7 +192,7 @@ export default function ContactPage() {
               If you have any questions, you can contact us. Please fill out the form below.
             </p>
 
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
@@ -178,6 +200,8 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors text-sm"
                   />
@@ -188,6 +212,8 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors text-sm"
                   />
@@ -199,6 +225,8 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   required
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors text-sm resize-none"
                 />
@@ -206,6 +234,11 @@ export default function ContactPage() {
               <button type="submit" className="btn-primary">
                 Submit
               </button>
+              {submitted && (
+                <p className="text-sm text-green-600 mt-2">
+                  Your inquiry is ready in your email client. Please send it to complete the request.
+                </p>
+              )}
             </form>
           </div>
         </div>

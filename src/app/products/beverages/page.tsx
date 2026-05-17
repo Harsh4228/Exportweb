@@ -9,7 +9,11 @@ const beveragesList = [
   {
     name: "Mineral Water",
     desc: "Pure and naturally sourced mineral water, packaged under strict quality standards for global distribution.",
-    images: ["/images/beverages/water-1.jpeg", "/images/beverages/water-2.jpeg", "/images/beverages/water-3.jpeg"],
+    images: [
+      "/images/beverages/water-5.jpeg",
+      "/images/beverages/water-6.jpeg",
+      "/images/beverages/water-8.jpeg"
+    ],
   },
 ];
 
