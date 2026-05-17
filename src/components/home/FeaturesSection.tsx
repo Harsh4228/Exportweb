@@ -3,12 +3,12 @@ import useScrollReveal from "@/hooks/useScrollReveal";
 import Link from "next/link";
 
 const features = [
-  "100% Cotton Products – Pure comfort and durability.",
+  "Premium Quality Products – Sourced from India’s finest growing regions.",
   "Reliable Exports – By sea, air, or courier, on time every time.",
-  "Customization Options – Sizes, GSM, and packing as per your needs.",
-  "Fair Pricing – Transparent FOB India rates with no hidden costs.",
-  "Trusted Network – Strong manufacturing base for consistent supply.",
-  "Global Standards – Products made to match international requirements.",
+  "Customization Options – Packaging, labeling, and grades as per your needs.",
+  "Fair Pricing – Transparent FOB/CIF India rates with no hidden costs.",
+  "FSSAI & APEDA Certified – Full compliance with food safety standards.",
+  "Global Standards – Products tested to match international requirements.",
 ];
 
 export default function FeaturesSection() {
@@ -17,13 +17,13 @@ export default function FeaturesSection() {
   return (
     <section ref={ref} className="section-padding bg-cream">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="scroll-reveal">
             <p className="text-sm uppercase tracking-[3px] text-gray-400 font-semibold mb-3">
               Our Promise
             </p>
             <h2 className="text-3xl md:text-4xl font-bold font-[var(--font-heading)] text-primary leading-tight">
-              Everything You Need For Quality Home Textiles
+              Everything You Need For Quality Indian Food Products
             </h2>
             <p className="text-lg text-gray-500 mt-4 font-[var(--font-heading)]">
               We&apos;re putting buyers first with:
@@ -49,8 +49,8 @@ export default function FeaturesSection() {
           <div className="scroll-reveal">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=600&q=80"
-                alt="Quality home textiles"
+                src="https://images.pexels.com/photos/7208238/pexels-photo-7208238.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Colorful Indian spice powders in metal bowls"
                 className="w-full h-[500px] object-cover"
               />
             </div>

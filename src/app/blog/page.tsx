@@ -19,7 +19,7 @@ export default function BlogPage() {
           Insights & Knowledge
         </h1>
         <p className="text-gray-500 max-w-2xl mx-auto">
-          Expert articles on cotton textiles, industry trends, and textile sourcing best practices.
+          Expert articles on Indian spices, food grains, export trends, and sourcing best practices.
         </p>
       </section>
 

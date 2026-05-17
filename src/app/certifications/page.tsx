@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { readData } from "@/lib/data";
 
-type Cert = { id: string; title: string; desc: string };
+type Cert = { id: string; title: string; desc: string; pdf?: string };
 
 const iconPaths: Record<number, string> = {
   0: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
@@ -40,17 +40,46 @@ export default function CertificationsPage() {
           {certifications.map((cert, i) => (
             <div
               key={cert.id}
-              className="bg-white border border-gray-100 rounded-2xl p-7 hover:border-gray-300 hover:shadow-sm transition-all"
+              className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-gray-300 hover:shadow-md transition-all"
             >
-              <div className="w-14 h-14 rounded-full bg-cream flex items-center justify-center text-primary mb-5">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d={iconPaths[i % 6] || iconPaths[0]} />
-                </svg>
+              {/* Preview Area */}
+              <div className="w-full h-56 bg-cream border-b border-gray-100 overflow-hidden">
+                {cert.pdf ? (
+                  <iframe
+                    src={`${cert.pdf}#toolbar=0&navpanes=0&scrollbar=0`}
+                    className="w-full h-full border-0 pointer-events-none"
+                    title={cert.title}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-white border-4 border-primary/20 flex items-center justify-center">
+                      <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d={iconPaths[i % 6] || iconPaths[0]} />
+                      </svg>
+                    </div>
+                  </div>
+                )}
               </div>
-              <h3 className="text-lg font-bold font-[var(--font-heading)] text-primary mb-2">
-                {cert.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{cert.desc}</p>
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-lg font-bold font-[var(--font-heading)] text-primary mb-2">
+                  {cert.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{cert.desc}</p>
+                {cert.pdf && (
+                  <a
+                    href={cert.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-primary hover:underline"
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    View Certificate
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>

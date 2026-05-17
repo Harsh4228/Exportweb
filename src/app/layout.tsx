@@ -19,11 +19,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lokasya Ventures | Premium Cotton Home Textiles Export",
+  title: "Meridian Global Exports | Premium Indian Spices, Food Grains & Beverages",
   description:
-    "India's trusted exporter of 100% cotton home textiles — bedsheets, towels, pillow covers & more. Quality, comfort, and reliability shipped worldwide.",
+    "India's trusted exporter of premium spices, food grains, and beverages. Quality, authenticity, and reliability shipped worldwide from Surat, Gujarat.",
   keywords:
-    "cotton textiles, home textiles export, bedsheets, towels, pillow covers, bath mats, India export, textile manufacturer",
+    "Indian spices export, turmeric, cumin, black pepper, food grains export, rice export, coffee beans, mineral water, Gujarat exporter",
 };
 
 export default function RootLayout({

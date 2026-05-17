@@ -25,9 +25,9 @@ export default function StatsSection() {
     fetch("/api/stats").then((r) => r.json()).then(setStats);
   }, []);
   return (
-    <section className="py-20 bg-cream border-y border-gray-100">
+    <section className="py-14 bg-cream border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold font-[var(--font-heading)] text-primary">
             Excellent Quality and On-Time Delivery.
           </h2>
@@ -42,11 +42,11 @@ export default function StatsSection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-6 py-3 text-sm">
             <span className="text-yellow-400">★★★★★</span>
             <span className="text-gray-600 font-medium">
-              4.8 Rating based on 1000+ happy buyers
+              4.8 Rating based on 500+ happy clients
             </span>
           </div>
         </div>

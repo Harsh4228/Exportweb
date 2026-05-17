@@ -1,32 +1,40 @@
 [
   {
     "id": "1",
-    "title": "OEKO-TEX Standard 100",
-    "desc": "Certified free from harmful substances. Every component of our textiles has been tested for safety."
+    "title": "FSSAI Certified",
+    "desc": "Food Safety and Standards Authority of India certification ensuring all food products meet safety and quality standards."
   },
   {
     "id": "2",
-    "title": "ISO 9001:2015",
-    "desc": "Quality management system certification ensuring consistent quality in manufacturing and delivery."
+    "title": "APEDA Registered",
+    "desc": "Agricultural and Processed Food Products Export Development Authority registration for export of scheduled products."
   },
   {
     "id": "3",
-    "title": "GOTS (Global Organic Textile Standard)",
-    "desc": "Our organic cotton products meet global standards for organic fibers, including ecological and social criteria."
+    "title": "Spices Board India",
+    "desc": "Registered with Spices Board India for quality assurance and export promotion of Indian spices."
   },
   {
     "id": "4",
-    "title": "BCI (Better Cotton Initiative)",
-    "desc": "We source cotton through sustainable farming practices that reduce environmental impact."
+    "title": "ISO 22000:2018",
+    "desc": "Food safety management system certification ensuring safe food production and handling throughout the supply chain."
   },
   {
     "id": "5",
-    "title": "SEDEX / SMETA Audit",
-    "desc": "Ethical trade audit ensuring labor rights, health & safety, environment, and business ethics compliance."
+    "title": "MSME Registered",
+    "desc": "Registered under Micro, Small & Medium Enterprises Development Act for government recognized business operations.",
+    "pdf": "/images/certificates/msme-certificate.pdf"
   },
   {
     "id": "6",
-    "title": "WRAP Certification",
-    "desc": "Worldwide Responsible Accredited Production certification for lawful, humane, and ethical manufacturing."
+    "title": "GST Registered",
+    "desc": "Goods and Services Tax registered business with full compliance for domestic and international trade operations.",
+    "pdf": "/images/certificates/gst-certificate.pdf"
+  },
+  {
+    "id": "7",
+    "title": "IEC Certificate",
+    "desc": "Importer Exporter Code issued by DGFT, Government of India, authorizing international trade operations.",
+    "pdf": "/images/certificates/iec-certificate.pdf"
   }
 ]

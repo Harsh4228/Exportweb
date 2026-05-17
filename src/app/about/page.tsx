@@ -11,13 +11,13 @@ export default function AboutPage() {
               About Us
             </p>
             <h1 className="text-4xl md:text-5xl font-bold font-[var(--font-heading)] text-primary leading-tight mb-5">
-              We Export Premium Cotton Textiles Worldwide
+              We Export Premium Indian Spices & Food Products Worldwide
             </h1>
             <p className="text-gray-500 leading-relaxed mb-6">
-              Lokasya Ventures is a trusted name in cotton home textile exports from India.
-              With years of expertise and a commitment to quality, we deliver premium
-              bedsheets, towels, pillow covers, bath mats, and duvets to clients across
-              the globe.
+              Meridian Global Exports is a trusted name in Indian spices, food grains,
+              and beverages exports. Since 2020, with a commitment to quality and
+              authenticity, we deliver premium turmeric, cumin, rice, coffee beans and
+              more to clients across the globe.
             </p>
             <Link href="/contact" className="btn-primary">
               Get in Touch →
@@ -25,8 +25,8 @@ export default function AboutPage() {
           </div>
           <div className="rounded-2xl overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80"
-              alt="Cotton textiles workspace"
+              src="https://images.pexels.com/photos/2632292/pexels-photo-2632292.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Premium Indian spices collection"
               className="w-full h-[400px] object-cover"
             />
           </div>
@@ -46,9 +46,9 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold font-[var(--font-heading)] text-primary mb-3">Our Vision</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                To be the most reliable and quality-driven cotton textile exporter from India,
-                serving clients in every corner of the world with products that stand for
-                excellence and sustainability.
+                To be the most reliable and quality-driven exporter of Indian spices,
+                food grains, and beverages, serving clients in every corner of the world
+                with products that stand for authenticity and excellence.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 border border-gray-100">
@@ -59,36 +59,92 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold font-[var(--font-heading)] text-primary mb-3">Our Mission</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                To deliver 100% cotton home textiles that meet international quality standards,
-                build long-term partnerships with our clients, and contribute to the growth
-                of India&apos;s textile export industry.
+                To deliver premium Indian food products that meet international quality
+                and safety standards, build long-term partnerships with our clients,
+                and contribute to the growth of India&apos;s agricultural export industry.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Team Section */}
       <section className="max-w-5xl mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold font-[var(--font-heading)] text-primary text-center mb-3">
-          Why Choose Lokasya Ventures?
+          Our Leadership Team
         </h2>
         <p className="text-center text-gray-400 text-sm mb-10 max-w-xl mx-auto">
-          We combine traditional craftsmanship with modern manufacturing to deliver exceptional products.
+          Meet the dedicated professionals behind Meridian Global Exports.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { num: "10+", label: "Years Experience" },
-            { num: "20+", label: "Countries Served" },
-            { num: "500+", label: "Happy Clients" },
-            { num: "1M+", label: "Products Exported" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center p-6 rounded-2xl border border-gray-100 hover:border-gray-300 transition-colors">
-              <div className="text-3xl font-bold text-primary font-[var(--font-heading)]">{stat.num}</div>
-              <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
+            {
+              name: "Sauvir Patel",
+              role: "Chief Executive Officer",
+              dept: "Sales & Marketing",
+              image: "/images/team/sauvir-patel.png",
+            },
+            {
+              name: "Hiren Parmar",
+              role: "Chief Executive Officer",
+              dept: "Foreign Trade & Documentation",
+              image: "/images/team/hiren-parmar.png",
+            },
+            {
+              name: "C H Parmar",
+              role: "Import Export & Logistics Manager",
+              dept: "",
+              image: "/images/team/ch-parmar.jpeg",
+            },
+            {
+              name: "Dimple Mistry",
+              role: "Accounts & Operation Executive",
+              dept: "",
+              image: "/images/team/dimple-mistry.png",
+            },
+          ].map((member) => (
+            <div key={member.name} className="text-center">
+              <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-gray-100">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="text-lg font-bold font-[var(--font-heading)] text-primary">{member.name}</h4>
+              <p className="text-gray-500 text-sm mt-1">{member.role}</p>
+              {member.dept && (
+                <p className="text-gray-400 text-xs mt-0.5">({member.dept})</p>
+              )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="bg-cream">
+        <div className="max-w-5xl mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold font-[var(--font-heading)] text-primary text-center mb-3">
+            Why Choose Meridian Global Exports?
+          </h2>
+          <p className="text-center text-gray-400 text-sm mb-10 max-w-xl mx-auto">
+            Experience since 2020 with a commitment to quality and global trade excellence.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { num: "5+", label: "Years Experience" },
+              { num: "20+", label: "Countries Served" },
+              { num: "500+", label: "Happy Clients" },
+              { num: "2000+", label: "Orders Delivered" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center p-6 rounded-2xl bg-white border border-gray-100 hover:border-gray-300 transition-colors">
+                <div className="text-3xl font-bold text-primary font-[var(--font-heading)]">{stat.num}</div>
+                <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -102,15 +158,15 @@ export default function AboutPage() {
             {[
               {
                 title: "Quality First",
-                desc: "Every product undergoes rigorous quality checks before shipping. We maintain the highest standards.",
+                desc: "Every product undergoes rigorous quality checks before shipping. We maintain the highest food safety standards.",
               },
               {
                 title: "Customer Focus",
-                desc: "Your satisfaction drives everything we do. We offer customized solutions for every client.",
+                desc: "Your satisfaction drives everything we do. We offer customized packaging and grading solutions for every client.",
               },
               {
-                title: "Sustainability",
-                desc: "We use eco-friendly processes and sustainable cotton sourcing to protect our planet.",
+                title: "Authenticity",
+                desc: "We source directly from the finest growing regions of India, ensuring genuine and pure products every time.",
               },
             ].map((v) => (
               <div key={v.title} className="text-center">
@@ -128,7 +184,7 @@ export default function AboutPage() {
           Ready to Partner With Us?
         </h2>
         <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">
-          Let&apos;s discuss how we can serve your cotton textile needs with quality and reliability.
+          Let&apos;s discuss how we can serve your Indian spices and food product needs with quality and reliability.
         </p>
         <Link href="/contact" className="btn-primary">
           Contact Us →

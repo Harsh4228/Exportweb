@@ -1,22 +1,38 @@
 "use client";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-type Product = { id: string; name: string; tag: string; image: string; href: string };
+const products = [
+  {
+    id: "1",
+    name: "Indian Spices",
+    tag: "Whole & Powder",
+    image: "https://images.pexels.com/photos/3040873/pexels-photo-3040873.jpeg?auto=compress&cs=tinysrgb&w=600",
+    href: "/products/spices",
+  },
+  {
+    id: "2",
+    name: "Food Grains",
+    tag: "Rice, Wheat, Oats & Ragi",
+    image: "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=600",
+    href: "/products/food-grains",
+  },
+  {
+    id: "3",
+    name: "Beverages",
+    tag: "Coffee Beans & Mineral Water",
+    image: "https://images.pexels.com/photos/942818/pexels-photo-942818.jpeg?auto=compress&cs=tinysrgb&w=600",
+    href: "/products/beverages",
+  },
+];
 
 export default function ProductsSection() {
   const ref = useScrollReveal();
-  const [products, setProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    fetch("/api/products").then((r) => r.json()).then((data) => setProducts(data.slice(0, 4)));
-  }, []);
 
   return (
     <section ref={ref} className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14 scroll-reveal">
+        <div className="text-center mb-10 scroll-reveal">
           <p className="text-sm uppercase tracking-[3px] text-gray-400 font-semibold mb-3">
             Our Collection
           </p>
@@ -25,7 +41,7 @@ export default function ProductsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product, i) => (
             <div
               key={product.name}

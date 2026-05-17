@@ -8,8 +8,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.745 3.745 0 011.043 3.296A3.745 3.745 0 0121 12z" />
       </svg>
     ),
-    title: "100% Cotton Quality",
-    description: "All products made from pure cotton for natural comfort, durability, and softness.",
+    title: "Premium Quality Products",
+    description: "All products sourced from India's finest growing regions with rigorous quality testing.",
   },
   {
     icon: (
@@ -18,7 +18,7 @@ const features = [
       </svg>
     ),
     title: "International Standards",
-    description: "Every textile carefully tested to match global quality requirements.",
+    description: "Every product carefully tested to match global food safety and quality requirements.",
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const features = [
       </svg>
     ),
     title: "Competitive Pricing",
-    description: "Fair and transparent rates (FOB India) with no hidden costs.",
+    description: "Fair and transparent rates (FOB/CIF India) with no hidden costs.",
   },
   {
     icon: (
@@ -46,12 +46,12 @@ export default function WhyChooseUs() {
   return (
     <section ref={ref} className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14 scroll-reveal">
+        <div className="text-center mb-10 scroll-reveal">
           <p className="text-sm uppercase tracking-[3px] text-gray-400 font-semibold mb-3">
             Why Choose Us
           </p>
           <h2 className="text-3xl md:text-4xl font-bold font-[var(--font-heading)] text-primary">
-            Why Choose Lokasya Ventures
+            Why Choose Meridian Global Exports
           </h2>
         </div>
 

@@ -18,7 +18,7 @@ export default function TestimonialsSection() {
   return (
     <section ref={ref} className="section-padding bg-white">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-14 scroll-reveal">
+        <div className="text-center mb-10 scroll-reveal">
           <p className="text-sm uppercase tracking-[3px] text-gray-400 font-semibold mb-3">
             Testimonials
           </p>

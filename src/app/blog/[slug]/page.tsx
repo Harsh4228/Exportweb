@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             Interested in Our Products?
           </h3>
           <p className="text-gray-400 text-sm mb-5">
-            Explore our premium cotton textile collection or get in touch for custom requirements.
+            Explore our premium Indian spices, food grains & beverages or get in touch for custom requirements.
           </p>
           <div className="flex justify-center gap-3">
             <Link href="/products" className="btn-primary text-sm py-2.5 px-5">

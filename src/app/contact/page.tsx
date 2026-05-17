@@ -8,8 +8,8 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto px-4 py-8">
           <div className="relative rounded-2xl overflow-hidden h-[300px]">
             <img
-              src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?w=1200&q=80"
-              alt="Cotton plant and textiles"
+              src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1200&q=80"
+              alt="Indian spices and food products"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
@@ -22,7 +22,7 @@ export default function ContactPage() {
                   Contact Us Easily Online, by Phone or by Dropping In
                 </h1>
                 <div className="flex items-center gap-4 mt-5">
-                  <a href="/contact#form" className="btn-primary text-sm py-2.5 px-5">
+                  <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20products.`} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2.5 px-5">
                     Send Inquiry
                   </a>
                   <span className="text-gray-300">|</span>
@@ -50,7 +50,7 @@ export default function ContactPage() {
               Contact Information
             </h2>
             <p className="text-gray-400 text-sm mb-8">
-              Discover why businesses worldwide choose Lokasya Ventures for quality cotton products and reliable export services.
+              Discover why businesses worldwide choose Meridian Global Exports for quality Indian spices, food grains, and beverages.
             </p>
 
             <div className="space-y-5">
@@ -76,21 +76,46 @@ export default function ContactPage() {
                 {
                   icon: (
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   ),
-                  text: process.env.NEXT_PUBLIC_EMAIL2 || "",
-                  href: `mailto:${process.env.NEXT_PUBLIC_EMAIL2}`,
+                  text: process.env.NEXT_PUBLIC_PHONE2_DISPLAY || "",
+                  href: `tel:${process.env.NEXT_PUBLIC_PHONE2}`,
                 },
-                {
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  ),
-                  text: process.env.NEXT_PUBLIC_EMAIL || "",
-                  href: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
-                },
+                ...(
+                  process.env.NEXT_PUBLIC_EMAIL === process.env.NEXT_PUBLIC_EMAIL2
+                    ? [
+                        {
+                          icon: (
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                          ),
+                          text: process.env.NEXT_PUBLIC_EMAIL || "",
+                          href: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
+                        },
+                      ]
+                    : [
+                        {
+                          icon: (
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                          ),
+                          text: process.env.NEXT_PUBLIC_EMAIL2 || "",
+                          href: `mailto:${process.env.NEXT_PUBLIC_EMAIL2}`,
+                        },
+                        {
+                          icon: (
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                          ),
+                          text: process.env.NEXT_PUBLIC_EMAIL || "",
+                          href: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
+                        },
+                      ]
+                ),
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 text-primary">
@@ -118,7 +143,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Lokasya Ventures Location"
+              title="Meridian Global Exports Location"
             />
           </div>
         </div>
@@ -129,20 +154,9 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Logo side */}
           <div className="flex justify-center">
-            <div className="w-64 h-64 rounded-full bg-gray-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-full border-2 border-primary flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                    <path d="M9 3l3 3 3-3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold font-[var(--font-heading)] text-primary uppercase tracking-wider">
-                  Lokasya
-                </h3>
-                <p className="text-xs text-gray-400 uppercase tracking-[3px]">Ventures</p>
-                <p className="text-[8px] text-gray-300 uppercase tracking-[2px] mt-1">Belong to the world</p>
+            <div className="w-[28rem] h-[28rem] rounded-full bg-white flex items-center justify-center">
+              <div className="w-[22rem] mx-auto">
+                <img src="/images/logo.png" alt="Meridian Global Exports" className="w-full h-auto object-contain mix-blend-multiply" />
               </div>
             </div>
           </div>

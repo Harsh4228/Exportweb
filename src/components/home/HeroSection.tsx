@@ -5,19 +5,19 @@ export default function HeroSection() {
   return (
     <section className="pt-24 pb-12 md:pt-28 md:pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center min-h-[70vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Text Side */}
           <div className="animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-[var(--font-heading)] text-primary leading-[1.1] tracking-tight">
-              100% Cotton
+              Premium Indian
               <br />
-              Home Textiles
+              Spices & Food
               <br />
               <span className="italic font-normal">Exported Worldwide</span>
             </h1>
             <p className="text-gray-500 text-lg mt-6 max-w-lg leading-relaxed">
-              Premium bedsheets, towels, pillow covers, duvets and mattress
-              protectors crafted from pure cotton. Quality, comfort and
+              Premium Indian spices, food grains, coffee beans and mineral water
+              sourced from the finest regions of India. Quality, authenticity and
               reliability you can trust.
             </p>
             <div className="flex flex-wrap items-center gap-4 mt-8">
@@ -66,8 +66,8 @@ export default function HeroSection() {
           <div className="relative animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80"
-                alt="Premium cotton home textiles"
+                src="https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Premium Indian spices - turmeric, cumin, chili on dark surface"
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />
             </div>
@@ -78,7 +78,7 @@ export default function HeroSection() {
                   ✓
                 </div>
                 <div>
-                  <p className="font-bold text-primary text-sm">1000+ Happy Buyers</p>
+                  <p className="font-bold text-primary text-sm">500+ Happy Clients</p>
                   <p className="text-xs text-gray-400">Worldwide</p>
                 </div>
               </div>

@@ -6,11 +6,11 @@ export default function CTASection() {
     <section className="py-20 bg-primary">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold font-[var(--font-heading)] text-white leading-tight">
-          The best way to make every home comfortable is with pure cotton textiles.
+          The finest Indian spices, food grains & beverages — delivered to your doorstep worldwide.
         </h2>
         <p className="text-white/60 text-lg mt-4 max-w-2xl mx-auto">
-          Partner with Lokasya Ventures and experience world-class cotton home
-          textiles with transparent pricing and on-time delivery worldwide.
+          Partner with Meridian Global Exports and experience premium quality
+          Indian products with transparent pricing and on-time delivery worldwide.
         </p>
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <Link href="/contact" className="bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all hover:shadow-lg hover:-translate-y-1 inline-flex items-center gap-2">

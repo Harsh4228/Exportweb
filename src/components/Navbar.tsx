@@ -4,11 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const productLinks = [
-  { href: "/products/bedsheets", label: "Bedsheets" },
-  { href: "/products/towels", label: "Towels" },
-  { href: "/products/pillow-covers", label: "Pillow Covers" },
-  { href: "/products/bath-mats", label: "Bath Mats" },
-  { href: "/products/duvets", label: "Duvets" },
+  { href: "/products/spices", label: "Indian Spices" },
+  { href: "/products/food-grains", label: "Food Grains" },
+  { href: "/products/beverages", label: "Beverages" },
 ];
 
 const navLinks = [
@@ -41,28 +39,18 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm py-3"
-            : "bg-white py-4"
+            ? "bg-white/95 backdrop-blur-md shadow-sm py-1"
+            : "bg-white py-1"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                <path d="M9 3l3 3 3-3" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div>
-              <h1 className="text-primary text-lg font-bold tracking-wider font-[var(--font-heading)] leading-tight uppercase">
-                Lokasya
-              </h1>
-              <p className="text-[10px] tracking-[2px] text-muted uppercase">
-                Ventures
-              </p>
-            </div>
+          <Link href="/" className="flex items-center gap-2 group">
+            <img
+              src="/images/logo.png"
+              alt="Meridian Global Exports"
+              className="h-24 w-auto object-contain mix-blend-multiply transition-all duration-300"
+            />
           </Link>
 
           {/* Desktop Links */}

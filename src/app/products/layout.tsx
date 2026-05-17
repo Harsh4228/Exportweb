@@ -3,11 +3,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const productLinks = [
-  { href: "/products/bedsheets", label: "Bedsheets" },
-  { href: "/products/towels", label: "Towels" },
-  { href: "/products/pillow-covers", label: "Pillow Covers" },
-  { href: "/products/bath-mats", label: "Bath Mats" },
-  { href: "/products/duvets", label: "Duvets" },
+  { href: "/products/spices", label: "Indian Spices" },
+  { href: "/products/food-grains", label: "Food Grains" },
+  { href: "/products/beverages", label: "Beverages" },
 ];
 
 export default function ProductsLayout({

@@ -13,8 +13,8 @@ export default function ProductsPage() {
         OUR PRODUCTS
       </h1>
       <p className="text-gray-500 text-lg mb-10 max-w-2xl">
-        Premium 100% cotton home textiles crafted for comfort, durability, and style.
-        Select a product category to explore details and specifications.
+        Premium Indian spices, food grains, and beverages sourced from the finest
+        regions of India. Select a product category to explore details and specifications.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
