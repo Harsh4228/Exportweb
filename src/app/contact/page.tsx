@@ -14,6 +14,11 @@ export default function ContactPage() {
     setLoading(true);
     setError("");
 
+    // Capture values before clearing
+    const submittedName = name;
+    const submittedEmail = email;
+    const submittedMessage = message;
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -29,6 +34,19 @@ export default function ContactPage() {
       setName("");
       setEmail("");
       setMessage("");
+
+      // After 2 seconds, open Gmail compose in a new tab with all details pre-filled
+      setTimeout(() => {
+        const to = process.env.NEXT_PUBLIC_EMAIL || "";
+        const subject = encodeURIComponent(`Inquiry from ${submittedName}`);
+        const body = encodeURIComponent(
+          `Name: ${submittedName}\nEmail: ${submittedEmail}\n\nMessage:\n${submittedMessage}`
+        );
+        window.open(
+          `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
+          "_blank"
+        );
+      }, 2000);
     } catch {
       setError("Failed to send message. Please try again or contact us via WhatsApp.");
     } finally {
@@ -248,9 +266,19 @@ export default function ContactPage() {
                 {loading ? "Sending..." : "Submit"}
               </button>
               {submitted && (
-                <p className="text-sm text-green-600 mt-2">
-                  Your message has been sent successfully! We will get back to you soon.
-                </p>
+                <div className="mt-4 p-4 rounded-xl bg-green-50 border border-green-200 flex items-start gap-3 animate-pulse-once">
+                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                    <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-green-700">Message sent successfully!</p>
+                    <p className="text-xs text-green-600 mt-0.5">
+                      We'll get back to you soon. Opening Gmail to send a copy of your inquiry…
+                    </p>
+                  </div>
+                </div>
               )}
               {error && (
                 <p className="text-sm text-red-600 mt-2">{error}</p>
