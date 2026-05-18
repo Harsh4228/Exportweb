@@ -81,7 +81,7 @@ export default function AboutPage() {
           {[
             {
               name: "Sauvir Patel",
-              role: "Managing Director",
+              role: "Chief Executive Officer",
               dept: "Sales & Marketing",
               image: "/images/team/sauvir-patel.png",
               imgPos: "object-top",
