@@ -35,7 +35,7 @@ export default function AboutPreview() {
             <p className="text-gray-500 mt-5 leading-relaxed">
               Welcome to Meridian Global Exports! We are a growing export house from
               India committed to supplying premium quality spices, food grains, and
-              beverages to businesses worldwide since 2020.
+              beverages to businesses worldwide since 2022.
             </p>
             <p className="text-gray-400 mt-3 leading-relaxed text-sm">
               Our products are sourced from the finest growing regions of India,
