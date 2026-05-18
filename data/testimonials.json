@@ -1,23 +1,23 @@
 [
   {
     "id": "1",
-    "name": "James Thompson",
-    "role": "Importer, USA",
+    "name": "Food Importer",
+    "role": "USA",
     "text": "Exceptional quality Indian spices! The turmeric and cumin are incredibly aromatic and fresh. Meridian Global Exports has been our trusted supplier for premium spices.",
     "rating": 5
   },
   {
     "id": "2",
-    "name": "Maria Schmidt",
-    "role": "Wholesaler, Germany",
+    "name": "Wholesale Buyer",
+    "role": "Germany",
     "text": "Reliable exports and competitive pricing on food grains. Their team ensures every shipment meets our European quality standards. Highly recommended!",
     "rating": 5
   },
   {
     "id": "3",
-    "name": "Ahmed Hassan",
-    "role": "Distributor, UAE",
-    "text": "Outstanding service from start to finish. The coffee beans quality is superb and the packaging is excellent. We have been partnering with Meridian for years now.",
+    "name": "Food Distributor",
+    "role": "UAE",
+    "text": "Outstanding service from start to finish. The coffee beans quality is superb and the packaging is excellent. We have been partnering with Meridian for consistent supply.",
     "rating": 5
   }
 ]

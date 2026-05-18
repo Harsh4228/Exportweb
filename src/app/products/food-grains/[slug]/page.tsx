@@ -91,7 +91,7 @@ export default async function GrainDetailPage({ params }: { params: Promise<{ sl
           <img
             src={grain.image}
             alt={grain.name}
-            className="w-full h-[350px] object-cover"
+            className="w-full h-[350px] object-contain bg-gray-50"
           />
         </div>
         <div>

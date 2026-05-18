@@ -13,13 +13,13 @@ export default function AboutPreview() {
           <div className="scroll-reveal relative">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/8747536/pexels-photo-8747536.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Aromatic Indian spices on wooden board"
-                className="w-full h-[450px] object-cover"
+                src="/images/spices/garam-masala.jpeg"
+                alt="Premium Indian Garam Masala spice blend"
+                className="w-full h-[450px] object-contain bg-gray-50"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-5 shadow-lg border border-gray-100 floating">
-              <p className="text-3xl font-bold font-[var(--font-heading)] text-primary">5+</p>
+              <p className="text-3xl font-bold font-[var(--font-heading)] text-primary">4+</p>
               <p className="text-xs text-gray-400 uppercase tracking-wider">Years Experience</p>
             </div>
           </div>

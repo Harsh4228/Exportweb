@@ -7,12 +7,12 @@ const beveragesList = [
     images: ["/images/beverages/coffee-1.jpeg", "/images/beverages/coffee-2.jpeg", "/images/beverages/coffee-3.jpeg"],
   },
   {
-    name: "Mineral Water",
-    desc: "Pure and naturally sourced mineral water, packaged under strict quality standards for global distribution.",
+    name: "Packaged Drinking Water",
+    desc: "BIS-certified packaged drinking water, produced under strict quality standards for global distribution.",
     images: [
-      "/images/beverages/water-5.jpeg",
-      "/images/beverages/water-6.jpeg",
-      "/images/beverages/water-8.jpeg"
+      "/images/beverages/water-1.jpeg",
+      "/images/beverages/water-2.jpeg",
+      "/images/beverages/water-3.jpeg"
     ],
   },
 ];
@@ -25,13 +25,13 @@ export default function BeveragesPage() {
       </h1>
 
       <h2 className="text-2xl md:text-3xl font-bold font-[var(--font-heading)] text-primary mt-8 mb-4">
-        PREMIUM COFFEE BEANS & MINERAL WATER
+        PREMIUM COFFEE BEANS & PACKAGED DRINKING WATER
       </h2>
 
       <p className="text-gray-500 leading-relaxed">
         We export premium quality <strong className="text-primary">coffee beans</strong> sourced
         from India&apos;s renowned coffee-growing regions and{" "}
-        <strong className="text-primary">mineral water</strong> that meets international
+        <strong className="text-primary">packaged drinking water</strong> that meets international
         purity standards. Our beverages division caters to global demand for high-quality
         Indian coffee and pure drinking water.
       </p>
@@ -45,31 +45,31 @@ export default function BeveragesPage() {
           India is the seventh largest coffee producer globally. Our green coffee beans are
           sourced from select estates in Karnataka, Kerala, and Tamil Nadu. We offer both
           Arabica (mild, aromatic) and Robusta (strong, full-bodied) varieties including
-          the world-famous Monsooned Malabar.
+          specialty monsooned varieties.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {beveragesList[0].images.map((img, i) => (
             <div key={i} className="rounded-2xl overflow-hidden h-64">
-              <img src={img} alt={`Coffee beans ${i + 1}`} className="w-full h-full object-cover" />
+              <img src={img} alt={`Coffee beans ${i + 1}`} className="w-full h-full object-contain bg-gray-50" />
             </div>
           ))}
         </div>
       </Link>
 
-      {/* Mineral Water Section */}
+      {/* Packaged Drinking Water Section */}
       <Link href="/products/beverages/mineral-water" className="block mt-10 group">
         <h3 className="text-xl font-bold font-[var(--font-heading)] text-primary mb-4 group-hover:underline">
-          Mineral Water <span className="text-sm font-normal text-gray-400 group-hover:text-primary transition-colors">→ View Details</span>
+          Packaged Drinking Water <span className="text-sm font-normal text-gray-400 group-hover:text-primary transition-colors">→ View Details</span>
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed mb-6">
-          We export naturally sourced mineral water packaged under strict quality control.
+          We export BIS-certified packaged drinking water under strict quality control.
           Available in multiple bottle sizes and bulk packaging options for international
           distribution.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {beveragesList[1].images.map((img, i) => (
             <div key={i} className="rounded-2xl overflow-hidden h-64">
-              <img src={img} alt={`Mineral water ${i + 1}`} className="w-full h-full object-cover" />
+              <img src={img} alt={`Packaged drinking water ${i + 1}`} className="w-full h-full object-contain bg-gray-50" />
             </div>
           ))}
         </div>
@@ -89,10 +89,10 @@ export default function BeveragesPage() {
           </tr>
         </thead>
         <tbody>
-          <tr><td>Arabica Coffee Beans</td><td>Plantation A, Plantation B, Mysore Nuggets</td><td>1kg, 5kg, 25kg, 60kg bags</td></tr>
+          <tr><td>Arabica Coffee Beans</td><td>Plantation A, Plantation B</td><td>1kg, 5kg, 25kg, 60kg bags</td></tr>
           <tr><td>Robusta Coffee Beans</td><td>Cherry AB, Parchment AB</td><td>1kg, 5kg, 25kg, 60kg bags</td></tr>
-          <tr><td>Monsooned Malabar</td><td>AA Grade</td><td>1kg, 5kg, 25kg, 60kg bags</td></tr>
-          <tr><td>Mineral Water</td><td>Natural Spring</td><td>250ml, 500ml, 1L, 2L, 5L, 20L</td></tr>
+          <tr><td>Monsooned Coffee</td><td>AA Grade (Coffee Board certified)</td><td>1kg, 5kg, 25kg, 60kg bags</td></tr>
+          <tr><td>Packaged Drinking Water</td><td>BIS Certified (IS 14543)</td><td>250ml, 500ml, 1L, 2L, 5L, 20L</td></tr>
         </tbody>
       </table>
 
@@ -104,7 +104,7 @@ export default function BeveragesPage() {
         {[
           "Premium quality coffee from India's finest estates",
           "Arabica, Robusta & specialty varieties",
-          "BIS & FSSAI certified mineral water",
+          "BIS & FSSAI certified packaged drinking water",
           "Custom packaging & private labeling",
           "Competitive bulk pricing",
           "Quality tested & graded beans",

@@ -3,21 +3,21 @@
     "id": "1",
     "name": "Indian Spices",
     "tag": "Whole & Powder",
-    "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80",
+    "image": "/images/spices/all-spices.jpeg",
     "href": "/products/spices"
   },
   {
     "id": "2",
     "name": "Food Grains",
     "tag": "Rice, Wheat, Oats & Ragi",
-    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&q=80",
+    "image": "/images/food-grains/rice.avif",
     "href": "/products/food-grains"
   },
   {
     "id": "3",
     "name": "Beverages",
-    "tag": "Coffee Beans & Mineral Water",
-    "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&q=80",
+    "tag": "Coffee Beans & Packaged Drinking Water",
+    "image": "/images/beverages/coffee-1.jpeg",
     "href": "/products/beverages"
   }
 ]

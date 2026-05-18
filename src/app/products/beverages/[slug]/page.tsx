@@ -16,11 +16,11 @@ const beveragesData: Record<string, {
     name: "Coffee Beans",
     images: ["/images/beverages/coffee-1.jpeg", "/images/beverages/coffee-2.jpeg", "/images/beverages/coffee-3.jpeg"],
     description:
-      "India is the seventh-largest coffee producer in the world. We export premium quality green coffee beans from India's renowned estates in Coorg, Chikmagalur, and Wayanad. Our beans include Arabica (mild, aromatic) and Robusta (strong, full-bodied) varieties, including the world-famous Monsooned Malabar.",
+      "India is the seventh-largest coffee producer in the world. We export premium quality green coffee beans from India's renowned estates in Coorg, Chikmagalur, and Wayanad. Our beans include Arabica (mild, aromatic) and Robusta (strong, full-bodied) varieties, including specialty monsooned coffee (subject to Coffee Board of India certification).",
     origin: "Karnataka (Coorg, Chikmagalur), Kerala (Wayanad), Tamil Nadu",
     shelfLife: "12–18 months",
     packaging: ["1kg", "5kg", "25kg", "60kg jute bags"],
-    varieties: ["Arabica Plantation A", "Arabica Plantation B", "Mysore Nuggets Extra Bold", "Robusta Cherry AB", "Robusta Parchment AB", "Monsooned Malabar AA"],
+    varieties: ["Arabica Plantation A", "Arabica Plantation B", "Robusta Cherry AB", "Robusta Parchment AB", "Monsooned Coffee (Coffee Board certified)"],
     uses: ["Roasting & brewing", "Instant coffee manufacturing", "Espresso blends", "Cold brew", "Decaf production"],
     specifications: [
       { label: "Bean Size", value: "Screen 17+ (Bold)" },
@@ -30,19 +30,19 @@ const beveragesData: Record<string, {
     ],
   },
   "mineral-water": {
-    name: "Mineral Water",
-    images: ["/images/beverages/water-1.jpeg", "/images/beverages/water-2.jpeg"],
+    name: "Packaged Drinking Water",
+    images: ["/images/beverages/water-1.jpeg", "/images/beverages/water-2.jpeg", "/images/beverages/water-3.jpeg", "/images/beverages/water-4.jpeg", "/images/beverages/water-5.jpeg"],
     description:
-      "We export pure, naturally sourced mineral water that meets international quality and safety standards. Packaged under strict BIS and FSSAI certified facilities, our mineral water is available in multiple sizes for retail and bulk distribution worldwide.",
+      "We export BIS-certified packaged drinking water that meets international quality and safety standards. Packaged under strict BIS (IS 14543) and FSSAI certified facilities, our drinking water is available in multiple sizes for retail and bulk distribution worldwide.",
     origin: "Gujarat, India",
     shelfLife: "6–12 months",
     packaging: ["250ml", "500ml", "1L", "2L", "5L", "20L bulk"],
-    varieties: ["Natural Mineral Water", "Packaged Drinking Water"],
+    varieties: ["Packaged Drinking Water (IS 14543)"],
     uses: ["Retail distribution", "Hospitality & restaurants", "Events & catering", "Corporate supply", "Airline & travel"],
     specifications: [
       { label: "TDS", value: "100–300 ppm" },
       { label: "pH Level", value: "6.5–8.5" },
-      { label: "Certification", value: "BIS / FSSAI" },
+      { label: "Certification", value: "BIS IS 14543 / FSSAI" },
       { label: "Packaging", value: "PET bottles, Jars" },
     ],
   },
@@ -75,14 +75,14 @@ export default async function BeverageDetailPage({ params }: { params: Promise<{
             <img
               src={beverage.images[0]}
               alt={beverage.name}
-              className="w-full h-[300px] object-cover"
+              className="w-full h-[300px] object-contain bg-gray-50"
             />
           </div>
           {beverage.images.length > 1 && (
             <div className="grid grid-cols-2 gap-4">
               {beverage.images.slice(1, 3).map((img, i) => (
                 <div key={i} className="rounded-xl overflow-hidden border border-gray-100">
-                  <img src={img} alt={`${beverage.name} ${i + 2}`} className="w-full h-32 object-cover" />
+                  <img src={img} alt={`${beverage.name} ${i + 2}`} className="w-full h-32 object-contain bg-gray-50" />
                 </div>
               ))}
             </div>

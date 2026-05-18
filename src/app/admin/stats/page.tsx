@@ -23,11 +23,12 @@ export default function AdminStats() {
 
   async function handleSave() {
     setLoading(true);
-    await fetch("/api/stats", {
+    const res = await fetch("/api/stats", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
+    if (!res.ok) { alert("Failed to save. Please try again."); setLoading(false); return; }
     setEditId(null);
     await load();
     setLoading(false);

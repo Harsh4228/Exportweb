@@ -7,7 +7,7 @@ const features = [
   "Reliable Exports – By sea, air, or courier, on time every time.",
   "Customization Options – Packaging, labeling, and grades as per your needs.",
   "Fair Pricing – Transparent FOB/CIF India rates with no hidden costs.",
-  "FSSAI & APEDA Certified – Full compliance with food safety standards.",
+  "FSSAI Certified & APEDA Registered – Full compliance with food safety standards.",
   "Global Standards – Products tested to match international requirements.",
 ];
 
@@ -49,9 +49,9 @@ export default function FeaturesSection() {
           <div className="scroll-reveal">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/7208238/pexels-photo-7208238.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Colorful Indian spice powders in metal bowls"
-                className="w-full h-[500px] object-cover"
+                src="/images/spices/turmeric.jpeg"
+                alt="Premium Indian Turmeric - Whole & Powder"
+                className="w-full h-[500px] object-contain bg-gray-50"
               />
             </div>
           </div>

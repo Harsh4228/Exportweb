@@ -16,7 +16,7 @@ const spicesData: Record<string, {
   turmeric: {
     name: "Turmeric",
     hindiName: "Haldi",
-    image: "/images/spices/turmeric.png",
+    image: "/images/spices/turmeric.jpeg",
     forms: "Powder & Finger",
     description:
       "Indian Turmeric is world-renowned for its deep golden color, earthy aroma, and high curcumin content. Sourced from the finest farms in Erode, Sangli, and Gujarat, our turmeric is processed under strict hygiene standards to retain maximum potency and flavor.",
@@ -27,7 +27,7 @@ const spicesData: Record<string, {
     specifications: [
       { label: "Curcumin Content", value: "2–5%" },
       { label: "Moisture", value: "Max 10%" },
-      { label: "Color Value", value: "Min 5.0 ASTA" },
+      { label: "Color Value", value: "Min 200 ASTA" },
       { label: "Grade", value: "Salem / Erode / Alleppey Finger" },
     ],
   },
@@ -55,7 +55,7 @@ const spicesData: Record<string, {
     image: "/images/spices/ginger.png",
     forms: "Powder & Whole",
     description:
-      "Indian dried ginger is valued for its sharp, pungent flavor and medicinal properties. We supply premium quality ginger in both dried whole and powder forms, sourced from Kerala, Karnataka, and Northeast India.",
+      "Indian dried ginger is valued for its sharp, pungent flavor and traditional wellness uses. We supply premium quality ginger in both dried whole and powder forms, sourced from Kerala, Karnataka, and Northeast India.",
     origin: "Kerala, Karnataka, Meghalaya, Assam",
     shelfLife: "12–18 months",
     packaging: ["100g", "250g", "500g", "1kg", "5kg", "25kg bags"],
@@ -70,7 +70,7 @@ const spicesData: Record<string, {
   coriander: {
     name: "Coriander",
     hindiName: "Dhaniya",
-    image: "/images/spices/coriander.png",
+    image: "/images/spices/coriander.jpeg",
     forms: "Powder & Seeds",
     description:
       "Indian coriander seeds have a mild, sweet, and citrusy flavor. Our coriander is sourced from Rajasthan, Gujarat, and Madhya Pradesh. Available in whole seed and fine powder form, it is a staple in Indian and global cuisines.",
@@ -88,7 +88,7 @@ const spicesData: Record<string, {
   cinnamon: {
     name: "Cassia / Cinnamon",
     hindiName: "Dalchini",
-    image: "/images/spices/cinnamon.png",
+    image: "/images/spices/cinnamon.jpeg",
     forms: "Powder & Sticks",
     description:
       "Indian cinnamon (cassia) is known for its warm, sweet, and slightly spicy flavor. We export premium quality cassia bark in stick and powder form, sourced from Kerala and Northeast India. Perfect for both sweet and savory applications.",
@@ -106,7 +106,7 @@ const spicesData: Record<string, {
   "black-pepper": {
     name: "Black Pepper",
     hindiName: "Mari / Kali Mirch",
-    image: "/images/spices/black-pepper.png",
+    image: "/images/spices/black-pepper.jpeg",
     forms: "Whole & Powder",
     description:
       "Known as the 'King of Spices', Indian black pepper is famous for its bold, pungent flavor and high piperine content. Sourced from the Malabar Coast of Kerala and Karnataka, our black pepper meets the highest international quality standards.",
@@ -124,7 +124,7 @@ const spicesData: Record<string, {
   "white-pepper": {
     name: "White Pepper",
     hindiName: "Safed Mirch",
-    image: "/images/spices/white-pepper.png",
+    image: "/images/spices/white-pepper.jpeg",
     forms: "Whole & Powder",
     description:
       "White pepper is the mature berry with the outer skin removed, offering a milder and more refined heat compared to black pepper. Our white pepper is carefully processed to ensure clean appearance and consistent flavor.",
@@ -142,7 +142,7 @@ const spicesData: Record<string, {
   clove: {
     name: "Clove",
     hindiName: "Laung",
-    image: "/images/spices/clove.png",
+    image: "/images/spices/clove.jpeg",
     forms: "Whole & Powder",
     description:
       "Indian cloves are intensely aromatic with a warm, sweet, and slightly bitter flavor. Sourced from Kerala and Tamil Nadu, our cloves are hand-picked at the perfect stage to ensure maximum essential oil content and rich aroma.",
@@ -159,7 +159,7 @@ const spicesData: Record<string, {
   },
   cardamom: {
     name: "Cardamom",
-    hindiName: "Eliachi",
+    hindiName: "Elaichi",
     image: "/images/spices/cardamom.png",
     forms: "Powder & Seeds",
     description:
@@ -178,7 +178,7 @@ const spicesData: Record<string, {
   nutmeg: {
     name: "Nutmeg",
     hindiName: "Jayfal",
-    image: "/images/spices/nutmeg.png",
+    image: "/images/spices/nutmeg.jpeg",
     forms: "Powder & Seeds",
     description:
       "Indian nutmeg has a warm, slightly sweet, and spicy flavor with a distinctive aroma. Sourced from Kerala, our nutmeg is sun-dried and graded to meet international export standards.",
@@ -214,7 +214,7 @@ const spicesData: Record<string, {
   "garam-masala": {
     name: "Garam Masala",
     hindiName: "Garam Masala",
-    image: "/images/spices/garam-masala.png",
+    image: "/images/spices/garam-masala.jpeg",
     forms: "Blended Masala",
     description:
       "Garam Masala is India's signature spice blend, combining cardamom, cinnamon, cloves, black pepper, and other aromatic spices. Our blend is roasted and ground to perfection for maximum flavor and aroma.",
@@ -232,10 +232,10 @@ const spicesData: Record<string, {
   ashwagandha: {
     name: "Ashwagandha",
     hindiName: "Ashwagandha",
-    image: "/images/spices/ashwagandha.png",
+    image: "/images/spices/ashwagandha.jpeg",
     forms: "Root & Powder",
     description:
-      "Ashwagandha (Withania somnifera) is one of India's most valued adaptogenic herbs. Our ashwagandha is sourced from Rajasthan and Madhya Pradesh, processed to retain maximum withanolide content for health and wellness applications.",
+      "Ashwagandha (Withania somnifera) is one of India's most valued traditional herbs. Our ashwagandha is sourced from Rajasthan and Madhya Pradesh, processed to retain maximum withanolide content for wellness applications.",
     origin: "Rajasthan, Madhya Pradesh",
     shelfLife: "18–24 months",
     packaging: ["100g", "250g", "500g", "1kg", "5kg", "25kg bags"],
@@ -275,7 +275,7 @@ export default async function SpiceDetailPage({ params }: { params: Promise<{ sl
           <img
             src={spice.image}
             alt={spice.name}
-            className="w-full h-[350px] object-cover"
+            className="w-full h-[350px] object-contain bg-gray-50"
           />
         </div>
         <div>

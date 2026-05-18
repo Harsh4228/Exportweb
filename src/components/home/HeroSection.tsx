@@ -66,9 +66,9 @@ export default function HeroSection() {
           <div className="relative animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Premium Indian spices - turmeric, cumin, chili on dark surface"
-                className="w-full h-[500px] lg:h-[600px] object-cover"
+                src="/images/spices/all-spices.jpeg"
+                alt="Premium Indian spices collection by Meridian Global Exports"
+                className="w-full h-[500px] lg:h-[600px] object-contain bg-gray-50"
               />
             </div>
             {/* Floating badge */}

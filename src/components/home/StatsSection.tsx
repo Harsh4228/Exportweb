@@ -46,7 +46,7 @@ export default function StatsSection() {
           <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-6 py-3 text-sm">
             <span className="text-yellow-400">★★★★★</span>
             <span className="text-gray-600 font-medium">
-              4.8 Rating based on 500+ happy clients
+              Trusted by 500+ clients worldwide
             </span>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-gray-500 leading-relaxed mb-6">
               Meridian Global Exports is a trusted name in Indian spices, food grains,
-              and beverages exports. Since 2020, with a commitment to quality and
+              and beverages exports. Since 2022, with a commitment to quality and
               authenticity, we deliver premium turmeric, cumin, rice, coffee beans and
               more to clients across the globe.
             </p>
@@ -25,9 +25,9 @@ export default function AboutPage() {
           </div>
           <div className="rounded-2xl overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/2632292/pexels-photo-2632292.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Premium Indian spices collection"
-              className="w-full h-[400px] object-cover"
+              src="/images/spices/cinnamon.jpeg"
+              alt="Premium Indian Cinnamon - Sticks & Powder"
+              className="w-full h-[400px] object-contain bg-gray-50"
             />
           </div>
         </div>
@@ -81,35 +81,39 @@ export default function AboutPage() {
           {[
             {
               name: "Sauvir Patel",
-              role: "Chief Executive Officer",
+              role: "Managing Director",
               dept: "Sales & Marketing",
               image: "/images/team/sauvir-patel.png",
+              imgPos: "object-top",
             },
             {
               name: "Hiren Parmar",
               role: "Chief Executive Officer",
               dept: "Foreign Trade & Documentation",
               image: "/images/team/hiren-parmar.png",
+              imgPos: "object-top",
             },
             {
               name: "C H Parmar",
               role: "Import Export & Logistics Manager",
               dept: "",
               image: "/images/team/ch-parmar.jpeg",
+              imgPos: "object-center",
             },
             {
               name: "Dimple Mistry",
               role: "Accounts & Operation Executive",
               dept: "",
               image: "/images/team/dimple-mistry.png",
+              imgPos: "object-top",
             },
           ].map((member) => (
             <div key={member.name} className="text-center">
-              <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-gray-100">
+              <div className="w-44 h-44 rounded-full mx-auto mb-4 overflow-hidden border-4 border-primary/20 shadow-md">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover ${member.imgPos}`}
                 />
               </div>
               <h4 className="text-lg font-bold font-[var(--font-heading)] text-primary">{member.name}</h4>
@@ -129,12 +133,12 @@ export default function AboutPage() {
             Why Choose Meridian Global Exports?
           </h2>
           <p className="text-center text-gray-400 text-sm mb-10 max-w-xl mx-auto">
-            Experience since 2020 with a commitment to quality and global trade excellence.
+            Experience since 2022 with a commitment to quality and global trade excellence.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { num: "5+", label: "Years Experience" },
+              { num: "4+", label: "Years Experience" },
               { num: "20+", label: "Countries Served" },
               { num: "500+", label: "Happy Clients" },
               { num: "2000+", label: "Orders Delivered" },

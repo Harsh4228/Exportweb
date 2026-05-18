@@ -1,19 +1,19 @@
 import Link from "next/link";
 
 const spicesList = [
-  { name: "Turmeric (Haldi)", forms: "Powder & Finger", image: "/images/spices/turmeric.png", slug: "turmeric" },
+  { name: "Turmeric (Haldi)", forms: "Powder & Finger", image: "/images/spices/turmeric.jpeg", slug: "turmeric" },
   { name: "Cumin (Jeera)", forms: "Powder & Seeds", image: "/images/spices/cumin.png", slug: "cumin" },
   { name: "Ginger (Sunth)", forms: "Powder & Whole", image: "/images/spices/ginger.png", slug: "ginger" },
-  { name: "Coriander (Dhaniya)", forms: "Powder & Seeds", image: "/images/spices/coriander.png", slug: "coriander" },
-  { name: "Cassia/Cinnamon (Dalchini)", forms: "Powder & Sticks", image: "/images/spices/cinnamon.png", slug: "cinnamon" },
-  { name: "Black Pepper (Mari)", forms: "Whole & Powder", image: "/images/spices/black-pepper.png", slug: "black-pepper" },
-  { name: "White Pepper", forms: "Whole & Powder", image: "/images/spices/white-pepper.png", slug: "white-pepper" },
-  { name: "Clove (Laung)", forms: "Whole & Powder", image: "/images/spices/clove.png", slug: "clove" },
-  { name: "Cardamom (Eliachi)", forms: "Powder & Seeds", image: "/images/spices/cardamom.png", slug: "cardamom" },
-  { name: "Nutmeg (Jayfal)", forms: "Powder & Seeds", image: "/images/spices/nutmeg.png", slug: "nutmeg" },
+  { name: "Coriander (Dhaniya)", forms: "Powder & Seeds", image: "/images/spices/coriander.jpeg", slug: "coriander" },
+  { name: "Cassia/Cinnamon (Dalchini)", forms: "Powder & Sticks", image: "/images/spices/cinnamon.jpeg", slug: "cinnamon" },
+  { name: "Black Pepper (Mari)", forms: "Whole & Powder", image: "/images/spices/black-pepper.jpeg", slug: "black-pepper" },
+  { name: "White Pepper", forms: "Whole & Powder", image: "/images/spices/white-pepper.jpeg", slug: "white-pepper" },
+  { name: "Clove (Laung)", forms: "Whole & Powder", image: "/images/spices/clove.jpeg", slug: "clove" },
+  { name: "Cardamom (Elaichi)", forms: "Powder & Seeds", image: "/images/spices/cardamom.png", slug: "cardamom" },
+  { name: "Nutmeg (Jayfal)", forms: "Powder & Seeds", image: "/images/spices/nutmeg.jpeg", slug: "nutmeg" },
   { name: "Curry Powder", forms: "Blended Powder", image: "/images/spices/curry-powder.png", slug: "curry-powder" },
-  { name: "Garam Masala", forms: "Blended Masala", image: "/images/spices/garam-masala.png", slug: "garam-masala" },
-  { name: "Ashwagandha", forms: "Root & Powder", image: "/images/spices/ashwagandha.png", slug: "ashwagandha" },
+  { name: "Garam Masala", forms: "Blended Masala", image: "/images/spices/garam-masala.jpeg", slug: "garam-masala" },
+  { name: "Ashwagandha", forms: "Root & Powder", image: "/images/spices/ashwagandha.jpeg", slug: "ashwagandha" },
 ];
 
 export default function SpicesPage() {
@@ -42,7 +42,7 @@ export default function SpicesPage() {
         <img
           src="/images/spices/all-spices.jpeg"
           alt="Premium Indian Spices Collection"
-          className="w-full h-[400px] object-cover"
+          className="w-full h-[400px] object-contain bg-gray-50"
         />
       </div>
 
@@ -58,7 +58,7 @@ export default function SpicesPage() {
               <img
                 src={spice.image}
                 alt={spice.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-contain bg-gray-50 transition-transform duration-500 group-hover:scale-105"
               />
             </div>
             <div className="p-4">

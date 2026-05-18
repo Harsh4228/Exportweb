@@ -69,7 +69,8 @@ export default function Navbar() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </Link>
-                  <div className="dropdown-menu absolute top-full left-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[200px]">
+                  <div className="dropdown-menu absolute top-full left-0 pt-2">
+                    <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[200px]">
                     {productLinks.map((p) => (
                       <Link
                         key={p.href}
@@ -79,6 +80,7 @@ export default function Navbar() {
                         {p.label}
                       </Link>
                     ))}
+                    </div>
                   </div>
                 </div>
               ) : (

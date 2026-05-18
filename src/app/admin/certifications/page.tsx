@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 
-type Cert = { id: string; title: string; desc: string };
+type Cert = { id: string; title: string; desc: string; pdf?: string };
 
-const empty: Cert = { id: "", title: "", desc: "" };
+const empty: Cert = { id: "", title: "", desc: "", pdf: "" };
 
 export default function AdminCertifications() {
   const [items, setItems] = useState<Cert[]>([]);
@@ -22,11 +22,12 @@ export default function AdminCertifications() {
     e.preventDefault();
     setLoading(true);
     const method = editing ? "PUT" : "POST";
-    await fetch("/api/certifications", {
+    const res = await fetch("/api/certifications", {
       method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
+    if (!res.ok) { alert("Failed to save. Please try again."); setLoading(false); return; }
     setForm(empty);
     setEditing(false);
     await load();
@@ -64,13 +65,19 @@ export default function AdminCertifications() {
             <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Title *</label>
             <input required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })}
               className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary"
-              placeholder="e.g. OEKO-TEX Standard 100" />
+              placeholder="e.g. FSSAI Certificate" />
           </div>
           <div>
             <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Description *</label>
             <textarea required value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })}
               rows={3}
               className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary resize-none" />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">PDF Path (optional)</label>
+            <input value={form.pdf || ""} onChange={(e) => setForm({ ...form, pdf: e.target.value })}
+              className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary"
+              placeholder="e.g. /images/certificates/fssai-certificate.pdf" />
           </div>
           <div className="flex gap-3">
             <button type="submit" disabled={loading} className="btn-primary py-2.5 px-6 text-sm disabled:opacity-50">

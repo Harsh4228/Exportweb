@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
             <h1 className="text-2xl font-bold font-[var(--font-heading)] text-primary">
               Admin Login
             </h1>
-            <p className="text-gray-400 text-sm mt-1">Lokasya Ventures Dashboard</p>
+            <p className="text-gray-400 text-sm mt-1">Meridian Global Exports Dashboard</p>
           </div>
 
           {error && (

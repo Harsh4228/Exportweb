@@ -7,21 +7,21 @@ const products = [
     id: "1",
     name: "Indian Spices",
     tag: "Whole & Powder",
-    image: "https://images.pexels.com/photos/3040873/pexels-photo-3040873.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "/images/spices/all-spices.jpeg",
     href: "/products/spices",
   },
   {
     id: "2",
     name: "Food Grains",
     tag: "Rice, Wheat, Oats & Ragi",
-    image: "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "/images/food-grains/rice.avif",
     href: "/products/food-grains",
   },
   {
     id: "3",
     name: "Beverages",
     tag: "Coffee Beans & Mineral Water",
-    image: "https://images.pexels.com/photos/942818/pexels-photo-942818.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "/images/beverages/coffee-1.jpeg",
     href: "/products/beverages",
   },
 ];
@@ -52,7 +52,7 @@ export default function ProductsSection() {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-contain bg-gray-900 transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="overlay" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/70 to-transparent">

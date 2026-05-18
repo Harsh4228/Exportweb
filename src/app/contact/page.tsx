@@ -6,20 +6,33 @@ export default function ContactPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
 
-    const recipient = process.env.NEXT_PUBLIC_EMAIL || "";
-    const subject = `Meridian Global Exports Inquiry from ${name || "Website Visitor"}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-    if (recipient) {
-      window.location.href = mailtoLink;
+      if (!res.ok) {
+        throw new Error("Failed to send");
+      }
+
       setSubmitted(true);
-    } else {
-      alert("Email address is not configured. Please contact us through WhatsApp or phone.");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setError("Failed to send message. Please try again or contact us via WhatsApp.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -30,9 +43,9 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto px-4 py-8">
           <div className="relative rounded-2xl overflow-hidden h-[300px]">
             <img
-              src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1200&q=80"
-              alt="Indian spices and food products"
-              className="w-full h-full object-cover"
+              src="/images/spices/all-spices.jpeg"
+              alt="Premium Indian spices and food products"
+              className="w-full h-full object-contain bg-gray-50"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
             <div className="absolute inset-0 flex items-center">
@@ -231,13 +244,16 @@ export default function ContactPage() {
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-primary transition-colors text-sm resize-none"
                 />
               </div>
-              <button type="submit" className="btn-primary">
-                Submit
+              <button type="submit" disabled={loading} className="btn-primary disabled:opacity-50">
+                {loading ? "Sending..." : "Submit"}
               </button>
               {submitted && (
                 <p className="text-sm text-green-600 mt-2">
-                  Your inquiry is ready in your email client. Please send it to complete the request.
+                  Your message has been sent successfully! We will get back to you soon.
                 </p>
+              )}
+              {error && (
+                <p className="text-sm text-red-600 mt-2">{error}</p>
               )}
             </form>
           </div>

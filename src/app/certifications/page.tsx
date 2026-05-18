@@ -16,6 +16,7 @@ export const dynamic = "force-dynamic";
 
 export default function CertificationsPage() {
   const certifications = readData<Cert[]>("certifications.json");
+  const sorted = [...certifications].sort((a, b) => (a.pdf ? 0 : 1) - (b.pdf ? 0 : 1));
 
   return (
     <div className="pt-20">
@@ -37,7 +38,7 @@ export default function CertificationsPage() {
       {/* Certifications Grid */}
       <section className="max-w-5xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, i) => (
+          {sorted.map((cert, i) => (
             <div
               key={cert.id}
               className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-gray-300 hover:shadow-md transition-all"

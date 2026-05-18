@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/lib/auth";
 import { readData, writeData } from "@/lib/data";
 
-type Cert = { id: string; title: string; desc: string };
+type Cert = { id: string; title: string; desc: string; pdf?: string };
 
 export async function GET() {
   return NextResponse.json(readData<Cert[]>("certifications.json"));
@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json();
   const items = readData<Cert[]>("certifications.json");
-  const newItem: Cert = { id: Date.now().toString(), title: body.title, desc: body.desc };
+  const newItem: Cert = { id: Date.now().toString(), title: body.title, desc: body.desc, ...(body.pdf && { pdf: body.pdf }) };
   items.push(newItem);
   writeData("certifications.json", items);
   return NextResponse.json(newItem, { status: 201 });

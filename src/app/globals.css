@@ -272,7 +272,7 @@
   .dropdown-menu {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(8px);
+    transform: translateY(4px);
     transition: all 0.25s ease;
     pointer-events: none;
   }

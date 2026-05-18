@@ -22,11 +22,12 @@ export default function AdminTestimonials() {
     e.preventDefault();
     setLoading(true);
     const method = editing ? "PUT" : "POST";
-    await fetch("/api/testimonials", {
+    const res = await fetch("/api/testimonials", {
       method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
+    if (!res.ok) { alert("Failed to save. Please try again."); setLoading(false); return; }
     setForm(empty);
     setEditing(false);
     await load();

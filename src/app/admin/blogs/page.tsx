@@ -35,11 +35,12 @@ export default function AdminBlogs() {
       slug: form.slug || autoSlug(form.title),
       content: contentText.split("\n\n").filter(Boolean),
     };
-    await fetch("/api/blogs", {
+    const res = await fetch("/api/blogs", {
       method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
+    if (!res.ok) { alert("Failed to save. Please try again."); setLoading(false); return; }
     setForm(empty);
     setContentText("");
     setEditing(false);
@@ -96,7 +97,7 @@ export default function AdminBlogs() {
               <input
                 required value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}
                 className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary"
-                placeholder="e.g. Cotton Guide"
+                placeholder="e.g. Spices"
               />
             </div>
             <div>

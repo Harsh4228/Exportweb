@@ -22,11 +22,12 @@ export default function AdminProducts() {
     e.preventDefault();
     setLoading(true);
     const method = editing ? "PUT" : "POST";
-    await fetch("/api/products", {
+    const res = await fetch("/api/products", {
       method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
+    if (!res.ok) { alert("Failed to save. Please try again."); setLoading(false); return; }
     setForm(empty);
     setEditing(false);
     await load();
@@ -66,7 +67,7 @@ export default function AdminProducts() {
             <input
               required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
               className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary"
-              placeholder="e.g. Bedsheets"
+              placeholder="e.g. Turmeric Powder"
             />
           </div>
           <div>
@@ -74,7 +75,7 @@ export default function AdminProducts() {
             <input
               required value={form.tag} onChange={(e) => setForm({ ...form, tag: e.target.value })}
               className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary"
-              placeholder="e.g. Premium 100% Cotton"
+              placeholder="e.g. Whole & Powder"
             />
           </div>
           <div>
@@ -82,7 +83,7 @@ export default function AdminProducts() {
             <input
               required value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })}
               className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary"
-              placeholder="https://images.unsplash.com/..."
+              placeholder="/images/spices/turmeric.jpeg"
             />
           </div>
           <div>
@@ -90,7 +91,7 @@ export default function AdminProducts() {
             <input
               required value={form.href} onChange={(e) => setForm({ ...form, href: e.target.value })}
               className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary"
-              placeholder="/products/bedsheets"
+              placeholder="/products/spices"
             />
           </div>
           <div className="md:col-span-2 flex gap-3">
