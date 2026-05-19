@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     "India's trusted exporter of premium spices, food grains, and beverages. Quality, authenticity, and reliability shipped worldwide from Surat, Gujarat.",
   keywords:
     "Indian spices export, turmeric, cumin, black pepper, food grains export, rice export, coffee beans, packaged drinking water, Gujarat exporter",
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
