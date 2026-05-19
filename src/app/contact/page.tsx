@@ -8,6 +8,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [gmailUrl, setGmailUrl] = useState("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,18 +36,13 @@ export default function ContactPage() {
       setEmail("");
       setMessage("");
 
-      // After 2 seconds, open Gmail compose in a new tab with all details pre-filled
-      setTimeout(() => {
-        const to = process.env.NEXT_PUBLIC_EMAIL || "";
-        const subject = encodeURIComponent(`Inquiry from ${submittedName}`);
-        const body = encodeURIComponent(
-          `Name: ${submittedName}\nEmail: ${submittedEmail}\n\nMessage:\n${submittedMessage}`
-        );
-        window.open(
-          `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
-          "_blank"
-        );
-      }, 2000);
+      // Build Gmail compose URL with pre-filled details (stored in state for direct user click)
+      const to = process.env.NEXT_PUBLIC_EMAIL || "";
+      const subject = encodeURIComponent(`Inquiry from ${submittedName}`);
+      const body = encodeURIComponent(
+        `Name: ${submittedName}\nEmail: ${submittedEmail}\n\nMessage:\n${submittedMessage}`
+      );
+      setGmailUrl(`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`);
     } catch {
       setError("Failed to send message. Please try again or contact us via WhatsApp.");
     } finally {
@@ -266,17 +262,30 @@ export default function ContactPage() {
                 {loading ? "Sending..." : "Submit"}
               </button>
               {submitted && (
-                <div className="mt-4 p-4 rounded-xl bg-green-50 border border-green-200 flex items-start gap-3 animate-pulse-once">
-                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                <div className="mt-4 p-4 rounded-xl bg-green-50 border border-green-200 flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-sm font-semibold text-green-700">Message sent successfully!</p>
-                    <p className="text-xs text-green-600 mt-0.5">
-                      We'll get back to you soon. Opening Gmail to send a copy of your inquiry…
+                    <p className="text-xs text-green-600 mt-0.5 mb-3">
+                      Your inquiry has been saved. Click the button below to also send it via Gmail.
                     </p>
+                    {gmailUrl && (
+                      <a
+                        href={gmailUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-green-300 text-green-700 text-xs font-semibold rounded-lg hover:bg-green-100 transition-colors"
+                      >
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Open Gmail Draft
+                      </a>
+                    )}
                   </div>
                 </div>
               )}
