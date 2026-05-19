@@ -27,8 +27,7 @@ function tryWriteData(messages: Message[]): void {
 }
 
 export async function GET() {
-  const { readData } = await import("@/lib/data");
-  return NextResponse.json(readData<Message[]>("messages.json"));
+  return NextResponse.json(tryReadData());
 }
 
 export async function POST(req: NextRequest) {
@@ -103,11 +102,11 @@ export async function PUT(req: NextRequest) {
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { id } = await req.json();
-  const messages = readData<Message[]>("messages.json");
+  const messages = tryReadData();
   const idx = messages.findIndex((m) => m.id === id);
   if (idx !== -1) {
     messages[idx].read = true;
-    writeData("messages.json", messages);
+    tryWriteData(messages);
   }
   return NextResponse.json({ success: true });
 }
@@ -118,8 +117,8 @@ export async function DELETE(req: NextRequest) {
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { id } = await req.json();
-  let messages = readData<Message[]>("messages.json");
+  let messages = tryReadData();
   messages = messages.filter((m) => m.id !== id);
-  writeData("messages.json", messages);
+  tryWriteData(messages);
   return NextResponse.json({ success: true });
 }
