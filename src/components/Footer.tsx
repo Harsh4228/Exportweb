@@ -104,7 +104,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-2 text-white/30 text-sm">
             <span className="text-yellow-400">★★★★★</span>
-            <span>Trusted by 500+ Happy Clients</span>
+            <span>Trusted by 45+ Happy Clients</span>
           </div>
         </div>
       </div>

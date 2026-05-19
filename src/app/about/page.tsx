@@ -139,9 +139,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { num: "4+", label: "Years Experience" },
-              { num: "20+", label: "Countries Served" },
-              { num: "500+", label: "Happy Clients" },
-              { num: "2000+", label: "Orders Delivered" },
+              { num: "10+", label: "Countries Served" },
+              { num: "45+", label: "Happy Clients" },
+              { num: "150+", label: "Successful Shipments" },
             ].map((stat) => (
               <div key={stat.label} className="text-center p-6 rounded-2xl bg-white border border-gray-100 hover:border-gray-300 transition-colors">
                 <div className="text-3xl font-bold text-primary font-[var(--font-heading)]">{stat.num}</div>

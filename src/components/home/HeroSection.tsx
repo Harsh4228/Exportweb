@@ -78,7 +78,7 @@ export default function HeroSection() {
                   ✓
                 </div>
                 <div>
-                  <p className="font-bold text-primary text-sm">500+ Happy Clients</p>
+                  <p className="font-bold text-primary text-sm">45+ Happy Clients</p>
                   <p className="text-xs text-gray-400">Worldwide</p>
                 </div>
               </div>
